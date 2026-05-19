@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Prueba | GitHub Pages</title>
+    <style>
+        /* Estilos básicos para que la página sea agradable a la vista */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0056b3;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .destacado {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>¡El Hosting Funciona! 🚀</h1>
+        <p>Esta es mi primera página web alojada en GitHub Pages</p>
+    </header>
+
+    <section>
+        <h2>1. Formateo de Texto Básico</h2>
+        <p>HTML permite estructurar el texto de varias maneras. Este es un párrafo normal. Aquí hay texto en <strong>negrita</strong> y aquí hay texto en <em>cursiva</em>. También puedes tener texto <span class="destacado">destacado con colores</span> usando CSS.</p>
+    </section>
+
+    <section>
+        <h2>2. Listas y Viñetas</h2>
+        <p>Existen dos tipos principales de listas:</p>
+        
+        <h3>Lista Desordenada (Puntos)</h3>
+        <ul>
+            <li>Elemento número uno</li>
+            <li>Elemento número dos</li>
+            <li>Elemento número tres</li>
+        </ul>
+
+        <h3>Lista Ordenada (Números)</h3>
+        <ol>
+            <li>Primer paso</li>
+            <li>Segundo paso</li>
+            <li>Tercer paso</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>3. Enlaces e Imágenes</h2>
+        <p>Puedes crear enlaces para ir a otras páginas. Por ejemplo, ir a <a href="https://github.com" target="_blank">GitHub</a> (se abre en una pestaña nueva).</p>
+        <p>También puedes insertar imágenes. Aquí tienes un ejemplo de un espacio reservado para una imagen:</p>
+        <img src="https://via.placeholder.com/400x150" alt="Imagen de marcador de posición" style="max-width:100%; border-radius:4px;">
+    </section>
+
+    <section>
+        <h2>4. Tablas de Datos</h2>
+        <p>Las tablas son útiles para organizar información, como piezas o repuestos:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Estado</th>
+                    <th>Precio Estimado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Placa Base HP 15-bs115dx</td>
+                    <td>En revisión</td>
+                    <td>Consultar</td>
+                </tr>
+                <tr>
+                    <td>Pantalla 15.6"</td>
+                    <td>Funcional</td>
+                    <td>$ 45.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>5. Elementos de Formulario (Interactivos)</h2>
+        <p>HTML permite agregar cajas de texto y botones, ideales para futuros sistemas de contacto o búsquedas.</p>
+        <form action="#" method="get">
+            <label for="prueba-input">Escribe un mensaje de prueba:</label><br>
+            <input type="text" id="prueba-input" name="prueba" placeholder="Escribe aquí..."><br>
+            <button type="button" onclick="alert('¡Los botones en HTML funcionan perfecto!')">Probar Botón</button>
+        </form>
+    </section>
+
+</body>
+</html>
