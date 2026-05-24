@@ -3,146 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Prueba | GitHub Pages</title>
+    <title>Mi Biblioteca de Descargas</title>
+    <!-- Tailwind CSS para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#3b82f6', // Azul principal
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Estilos básicos para que la página sea agradable a la vista */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+        /* Animación suave al cambiar de categoría */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #0056b3;
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            margin-top: 0;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        input[type="text"] {
-            padding: 8px;
-            width: 80%;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #218838;
-        }
-        .destacado {
-            font-weight: bold;
-            color: #d9534f;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body>
+<body class="bg-darkBg text-slate-200 font-sans min-h-screen flex flex-col">
 
-    <header>
-        <h1>¡El Hosting Funciona! 🚀</h1>
-        <p>Esta es mi primera página web alojada en GitHub Pages</p>
+    <!-- Encabezado de la página -->
+    <header class="bg-cardBg shadow-lg border-b border-slate-700 py-6 text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
+            <i class="fa-solid fa-cloud-arrow-down text-brand mr-2"></i>Mi Biblioteca
+        </h1>
+        <p class="text-slate-400">Encuentra y descarga todas mis recomendaciones</p>
     </header>
 
-    <section>
-        <h2>1. Formateo de Texto Básico</h2>
-        <p>HTML permite estructurar el texto de varias maneras. Este es un párrafo normal. Aquí hay texto en <strong>negrita</strong> y aquí hay texto en <em>cursiva</em>. También puedes tener texto <span class="destacado">destacado con colores</span> usando CSS.</p>
-    </section>
+    <!-- Navegación de Categorías (Se genera automáticamente) -->
+    <nav class="container mx-auto px-4 mt-8">
+        <div id="contenedor-categorias" class="flex flex-wrap justify-center gap-2 border-b border-slate-700 pb-4">
+            <!-- Los botones se insertan aquí vía JavaScript -->
+        </div>
+    </nav>
 
-    <section>
-        <h2>2. Listas y Viñetas</h2>
-        <p>Existen dos tipos principales de listas:</p>
+    <!-- Contenedor Principal donde aparecen las tarjetas -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        <div id="contenedor-tarjetas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Las tarjetas se insertan aquí vía JavaScript -->
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-cardBg border-t border-slate-700 py-6 text-center text-slate-400 mt-auto">
+        <p>© 2026 Mi Directorio. Alojado en GitHub Pages.</p>
+    </footer>
+
+    <!-- ======================================================= -->
+    <!-- ZONA DE CONFIGURACIÓN: AQUÍ AGREGAS TUS LINKS Y DATOS -->
+    <!-- ======================================================= -->
+    <script>
+        // 1. BASE DE DATOS: Agrega o modifica tus categorías y enlaces aquí.
+        const baseDeDatos = {
+            
+            // Categoría 1
+            "Aplicaciones": [
+                {
+                    titulo: "Visual Studio Code",
+                    descripcion: "Mi editor de código favorito para programar.",
+                    imagen: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
+                    enlace: "https://code.visualstudio.com/"
+                },
+                {
+                    titulo: "Discord",
+                    descripcion: "App para hablar con amigos y comunidades.",
+                    imagen: "https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
+                    enlace: "https://discord.com/"
+                }
+            ],
+
+            // Categoría 2
+            "Música": [
+                {
+                    titulo: "Mi Playlist Lofi",
+                    descripcion: "Música relajante para concentrarse o estudiar.",
+                    imagen: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+                    enlace: "https://open.spotify.com/"
+                }
+            ],
+
+            // Categoría 3
+            "Archivos y Docs": [
+                {
+                    titulo: "Plantilla de CV",
+                    descripcion: "Mi formato de Curriculum Vitae en PDF.",
+                    imagen: "https://images.unsplash.com/photo-1612480797682-1d48c0817c18?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+                    enlace: "#" // Reemplaza el # con el link de tu archivo (ej. Google Drive)
+                }
+            ]
+            
+            // Puedes agregar más categorías separándolas con una coma (,)
+        };
+
+        // =======================================================
+        // LÓGICA DE LA PÁGINA (No necesitas tocar esto si no quieres)
+        // =======================================================
         
-        <h3>Lista Desordenada (Puntos)</h3>
-        <ul>
-            <li>Elemento número uno</li>
-            <li>Elemento número dos</li>
-            <li>Elemento número tres</li>
-        </ul>
+        let categoriaActual = Object.keys(baseDeDatos)[0]; // Selecciona la primera por defecto
 
-        <h3>Lista Ordenada (Números)</h3>
-        <ol>
-            <li>Primer paso</li>
-            <li>Segundo paso</li>
-            <li>Tercer paso</li>
-        </ol>
-    </section>
+        function inicializarWeb() {
+            renderizarPestanas();
+            renderizarTarjetas(categoriaActual);
+        }
 
-    <section>
-        <h2>3. Enlaces e Imágenes</h2>
-        <p>Puedes crear enlaces para ir a otras páginas. Por ejemplo, ir a <a href="https://github.com" target="_blank">GitHub</a> (se abre en una pestaña nueva).</p>
-        <p>También puedes insertar imágenes. Aquí tienes un ejemplo de un espacio reservado para una imagen:</p>
-        <img src="https://via.placeholder.com/400x150" alt="Imagen de marcador de posición" style="max-width:100%; border-radius:4px;">
-    </section>
+        function renderizarPestanas() {
+            const contenedor = document.getElementById('contenedor-categorias');
+            contenedor.innerHTML = '';
+            
+            Object.keys(baseDeDatos).forEach(categoria => {
+                const btn = document.createElement('button');
+                btn.innerText = categoria;
+                
+                // Estilos base del botón
+                btn.className = `px-5 py-2 rounded-full font-medium transition-all duration-300 ${
+                    categoria === categoriaActual 
+                    ? 'bg-brand text-white shadow-[0_0_15px_rgba(59,130,246,0.5)]' 
+                    : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                }`;
+                
+                // Evento al hacer clic
+                btn.onclick = () => {
+                    categoriaActual = categoria;
+                    renderizarPestanas(); // Actualiza colores
+                    renderizarTarjetas(categoria); // Muestra las nuevas tarjetas
+                };
+                contenedor.appendChild(btn);
+            });
+        }
 
-    <section>
-        <h2>4. Tablas de Datos</h2>
-        <p>Las tablas son útiles para organizar información, como piezas o repuestos:</p>
-        <table>
-            <thead>
-                <tr>
-                    <th>Componente</th>
-                    <th>Estado</th>
-                    <th>Precio Estimado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Placa Base HP 15-bs115dx</td>
-                    <td>En revisión</td>
-                    <td>Consultar</td>
-                </tr>
-                <tr>
-                    <td>Pantalla 15.6"</td>
-                    <td>Funcional</td>
-                    <td>$ 45.00</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        function renderizarTarjetas(categoria) {
+            const contenedor = document.getElementById('contenedor-tarjetas');
+            contenedor.innerHTML = ''; // Limpiar anteriores
+            
+            const items = baseDeDatos[categoria] || [];
 
-    <section>
-        <h2>5. Elementos de Formulario (Interactivos)</h2>
-        <p>HTML permite agregar cajas de texto y botones, ideales para futuros sistemas de contacto o búsquedas.</p>
-        <form action="#" method="get">
-            <label for="prueba-input">Escribe un mensaje de prueba:</label><br>
-            <input type="text" id="prueba-input" name="prueba" placeholder="Escribe aquí..."><br>
-            <button type="button" onclick="alert('¡Los botones en HTML funcionan perfecto!')">Probar Botón</button>
-        </form>
-    </section>
+            if (items.length === 0) {
+                contenedor.innerHTML = `<p class="col-span-full text-center text-slate-500 py-10">No hay elementos en esta categoría aún.</p>`;
+                return;
+            }
 
+            items.forEach(item => {
+                const tarjeta = document.createElement('div');
+                tarjeta.className = 'bg-cardBg rounded-xl overflow-hidden shadow-lg border border-slate-700 hover:border-brand transition-colors duration-300 flex flex-col h-full fade-in';
+                
+                // Si la imagen falla o no tiene, usamos una por defecto
+                const imgUrl = item.imagen ? item.imagen : 'https://via.placeholder.com/500x300/1e293b/ffffff?text=Sin+Imagen';
+
+                tarjeta.innerHTML = `
+                    <div class="h-48 overflow-hidden bg-white flex items-center justify-center p-4">
+                        <img src="${imgUrl}" alt="${item.titulo}" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/500x300/1e293b/ffffff?text=Error+de+Imagen'">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">${item.titulo}</h3>
+                        <p class="text-slate-400 text-sm mb-6 flex-grow">${item.descripcion}</p>
+                        <a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                            <i class="fa-solid fa-download mr-2"></i>Ir al Link
+                        </a>
+                    </div>
+                `;
+                contenedor.appendChild(tarjeta);
+            });
+        }
+
+        // Arrancar la página
+        window.onload = inicializarWeb;
+    </script>
 </body>
 </html>
