@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TboZ Store</title>
-    <!-- Tailwind CSS para los estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
@@ -34,36 +32,35 @@
 </head>
 <body class="bg-darkBg text-slate-200 font-sans min-h-screen flex flex-col">
 
-    <!-- Encabezado de la página -->
-    <header class="bg-cardBg shadow-lg border-b border-slate-700 py-6 text-center">
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">
-            <i class="fa-solid fa-cloud-arrow-down text-brand mr-2"></i>TboZ Store
-        </h1>
-        <p class="text-slate-400">APPS, Juegos, Animes, Mangas y mas :)</p>
+    <header class="bg-cardBg shadow-lg border-b border-slate-700 relative">
+        <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?q=80&w=1200&auto=format&fit=crop" 
+             alt="Banner principal" 
+             class="w-full h-48 md:h-64 object-cover opacity-60">
+             
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center drop-shadow-2xl">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-wide">
+                <i class="fa-solid fa-cloud-arrow-down text-brand mr-2"></i>TboZ Store
+            </h1>
+            <p class="text-slate-200 text-lg font-medium bg-black/30 px-4 py-1 rounded-full backdrop-blur-sm">
+                APPS, Juegos, Animes, Mangas y más :)
+            </p>
+        </div>
     </header>
 
-    <!-- Navegación de Categorías (Se genera automáticamente) -->
     <nav class="container mx-auto px-4 mt-8">
         <div id="contenedor-categorias" class="flex flex-wrap justify-center gap-2 border-b border-slate-700 pb-4">
-            <!-- Los botones se insertan aquí vía JavaScript -->
-        </div>
+            </div>
     </nav>
 
-    <!-- Contenedor Principal donde aparecen las tarjetas -->
     <main class="container mx-auto px-4 py-8 flex-grow">
         <div id="contenedor-tarjetas" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Las tarjetas se insertan aquí vía JavaScript -->
-        </div>
+            </div>
     </main>
 
-    <!-- Pie de página -->
     <footer class="bg-cardBg border-t border-slate-700 py-6 text-center text-slate-400 mt-auto">
         <p>© 2026 Mi TboZStore. GitHub Pages.</p>
     </footer>
 
-    <!-- ======================================================= -->
-    <!-- ZONA DE CONFIGURACIÓN: AQUÍ AGREGAS TUS LINKS Y DATOS -->
-    <!-- ======================================================= -->
     <script>
         // 1. BASE DE DATOS: Agrega o modifica tus categorías y enlaces aquí.
         const baseDeDatos = {
@@ -73,7 +70,7 @@
                 {
                     titulo: "I Wanna Be The Boshy",
                     descripcion: "Clasico kaizo 2D de la saga i wanna be.",
-                    imagen: "C:\Users\User\Pictures\web img\iwbtb.jpg",
+                    imagen: "C:/Users/User/Pictures/web img/iwbtb.jpg", // Recuerda que para que se vea en internet, debes subir esta imagen a GitHub o usar un link de internet
                     enlace: "https://www.mediafire.com/file/nr55aa3lc6x5bi1/Boshy.zip"
                 },
                 {
@@ -97,18 +94,16 @@
             // Categoría 3
             "Dependencias y Aplicaciones": [
                 {
-                    titulo: "Dependencias Inportantes (Windows)",
+                    titulo: "Dependencias Importantes (Windows)",
                     descripcion: "Dependencias indispensables para que los Juegos y Apps funcionen correctamente en tu PC",
                     imagen: "https://cdn-icons-png.flaticon.com/512/5968/5968672.png",
-                    enlace: "https://www.mediafire.com/file/jyq97qzbhfv7e8v/Dependencias_Necesarias_%2528Win%2529.zip/file" // Reemplaza el # con el link de tu archivo (ej. Google Drive)
+                    enlace: "https://www.mediafire.com/file/jyq97qzbhfv7e8v/Dependencias_Necesarias_%2528Win%2529.zip/file" 
                 }
             ]
-            
-            // Puedes agregar más categorías separándolas con una coma (,)
         };
 
         // =======================================================
-        // LÓGICA DE LA PÁGINA (No necesitas tocar esto si no quieres)
+        // LÓGICA DE LA PÁGINA 
         // =======================================================
         
         let categoriaActual = Object.keys(baseDeDatos)[0]; // Selecciona la primera por defecto
@@ -136,8 +131,8 @@
                 // Evento al hacer clic
                 btn.onclick = () => {
                     categoriaActual = categoria;
-                    renderizarPestanas(); // Actualiza colores
-                    renderizarTarjetas(categoria); // Muestra las nuevas tarjetas
+                    renderizarPestanas(); 
+                    renderizarTarjetas(categoria); 
                 };
                 contenedor.appendChild(btn);
             });
@@ -158,7 +153,6 @@
                 const tarjeta = document.createElement('div');
                 tarjeta.className = 'bg-cardBg rounded-xl overflow-hidden shadow-lg border border-slate-700 hover:border-brand transition-colors duration-300 flex flex-col h-full fade-in';
                 
-                // Si la imagen falla o no tiene, usamos una por defecto
                 const imgUrl = item.imagen ? item.imagen : 'https://via.placeholder.com/500x300/1e293b/ffffff?text=Sin+Imagen';
 
                 tarjeta.innerHTML = `
@@ -166,9 +160,11 @@
                         <img src="${imgUrl}" alt="${item.titulo}" class="max-h-full max-w-full object-contain hover:scale-105 transition-transform duration-300" onerror="this.src='https://via.placeholder.com/500x300/1e293b/ffffff?text=Error+de+Imagen'">
                     </div>
                     <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">${item.titulo}</h3>
-                        <p class="text-slate-400 text-sm mb-6 flex-grow">${item.descripcion}</p>
-                        <a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-6">${item.titulo}</h3>
+                        
+                        <p class="text-slate-300 text-sm mb-6 flex-grow leading-relaxed">${item.descripcion}</p>
+                        
+                        <a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="block w-full text-center bg-brand hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors mt-auto">
                             <i class="fa-solid fa-download mr-2"></i>Ir al Link
                         </a>
                     </div>
